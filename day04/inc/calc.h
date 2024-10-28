@@ -7,5 +7,6 @@
 int add(int,int);
 int sub(int, int);
 int mul(int,int);
+float division(int, int);
 
 #endif
