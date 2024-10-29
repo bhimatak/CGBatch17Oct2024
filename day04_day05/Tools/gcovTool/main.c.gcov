@@ -1,0 +1,23 @@
+        -:    0:Source:t1.c
+        -:    0:Graph:t1.gcno
+        -:    0:Data:t1.gcda
+        -:    0:Runs:3
+        -:    1:#include <stdio.h>
+        -:    2:
+        3:    3:int main()
+        -:    4:{
+        -:    5:    int x;
+        -:    6:
+        3:    7:    printf("Enter an integer: ");
+        3:    8:    scanf("%d", &x);
+        -:    9:
+        3:   10:    if (x < 10)
+        1:   11:        printf("x is less than 10\n");
+        2:   12:    else if (x < 20)
+        1:   13:        printf("x is greater than or equal to 10 and x is less than 20\n");
+        -:   14:    else
+        1:   15:        printf("x is greater than or equal to 20\n");
+        -:   16:
+        3:   17:    return 0;
+        -:   18:}
+        -:   19:
