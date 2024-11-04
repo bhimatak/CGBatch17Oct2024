@@ -24,6 +24,8 @@ int main()
 	char desg[20];
 	char gender;
 
+	int wdFld = 1;
+
 
 	printf("\nEnter the Employee details\n");
 	printf("\nID: ");
@@ -42,10 +44,10 @@ int main()
 	printf("\nDesgination: ");
 	scanf("%s",desg);
 
-	
 
-	printf("\nSlNo | ID | NAME | GENDER | ADDRESS | PHNO | SALARY | DESG");
-	printf("\n%03d | %d | %s | %c | %s | %d | %f | %s\n",1,id,name,gender,address, phno,salary, desg);
+
+	printf("\n%-4s\t|%s| NAME | GENDER | ADDRESS | PHNO | SALARY | DESG","SlNo","ID");
+	printf("\n%03d\t| %d | %s | %c | %s | %d | %f | %s\n",1,id,name,gender,address, phno,salary, desg);
 	printf("\n\n");
 
 
