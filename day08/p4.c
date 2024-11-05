@@ -19,24 +19,27 @@ int displayMenu();
 int main()
 {
 	int ch;
-	int flag = 0;
+	int flag = 0, val1, val2;
 	while(True){
 		flag = 0;
-		//ch = displayMenu();
-		
-		switch(displayMenu())
+		ch = displayMenu();
+		if(ch == 5)
+			break;
+		printf("\nEnter the two values: ");
+		scanf("%d%d",&val1,&val2);
+		switch(ch)
 		{
 			case 1:
-				printf("\nAddition function executed\n");
+				printf("\nAdd of %d + %d = %d\n",val1,val2,(val1+val2));
 				break;
 			case 2:
-				printf("\nSub function executed\n");
+				printf("\nSub of %d + %d = %d\n",val1,val2,(val1-val2));
 				break;
 			case 3:
-				printf("\nMul function executed\n");
+				printf("\nMul of %d + %d = %d\n",val1,val2,(val1*val2));
 				break;
 			case 4:
-				printf("\nDivision function executed\n");
+				printf("\nDiv of %d + %d = %f\n",val1,val2,(float)val1/val2);
 				break;
 			case 5:
 				printf("\nExiting from the Application\n");
