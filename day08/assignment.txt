@@ -1,0 +1,29 @@
+Q. Print series 0,3,8,15,24,35,48,63,80,99
+
+Q2. Print series 1, 2, 4, 8, 16, 32, 64.
+
+Q3. Find  the  sum  of  series  1+4-9+16-25+36 
+
+Q4. Print the star pattern
+given input: n = 5
+output:
+*
+**
+***
+****
+*****
+
+Q5. Write the logic to for incrementing Squared Number-Star Pattern.
+Input Format      : Take N as input of type integer.
+Output Format     : Print incrementing Squared Number-Star Pattern.
+
+Constraints:
+2<=N<=10
+Sample Input:
+5
+Sample Output:
+1*2*3*4*5
+6*7*8*9*10
+11*12*13*14*15
+16*17*18*19*20
+21*22*23*24*25
