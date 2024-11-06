@@ -1,0 +1,22 @@
+Functions:
+
+1. std lib function
+	printf, sqrt, abs,pow
+2. user defined
+    user is defining his/her own task to be performed
+
+
+rdt fName(input args)
+{
+	sts;
+	return rdt;
+}
+
+int add(int,int);
+
+int add(int val1, int val2)
+{
+	float result = val1+val2;
+
+	return result;
+}
