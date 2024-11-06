@@ -1,0 +1,69 @@
+
+//decalaration part
+
+dt ArrName[CAP];
+
+
+int arr[10];
+
+float arr1[10];
+
+struct Emp
+{
+	int id;
+	char name[20];
+	
+};
+
+struct Emp e[10];
+
+
+
+// access elements of arr to store or evealute
+
+
+ArrName[indexValue] = Value;
+
+=> indexValue from 0 to CAP-1
+
+
+arr[2] = 20;
+
+
+
+
+1. static array
+2. dynamic arr
+3. stretchable arry
+4. mutable arry
+
+1. static array: the size of array is known before to the compl
+                 time.
+
+
+  ex: 
+  	int arr[5];
+
+
+2. dy. arr:
+
+	size of the array is allocated/known at run time.
+
+	malloc, calloc, realloc => stdlib.h
+
+3. stretchable array:
+     size of the array are increased or dec depending on the need
+     for dy. array
+
+     malloc, calloc, realloc
+
+4. mutable:
+    the size of the array is known or allocted at the time of linking and before execution
+    
+
+
+
+
+
+
+
