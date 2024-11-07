@@ -1,0 +1,100 @@
+A1. Check whether a given number can be expressed as the sum of two prime number
+
+i/p
+Enter a positive integer: 34
+Output
+34 = 3 + 31
+
+34 = 5 + 29
+34 = 11 + 23
+34 = 17 + 17
+NoofWays = 4
+
+NoofWays=-1
+
+
+
+
+
+
+
+A2.Program to find nth number made of given four digits 1, 4,6 and 9 as the only digits..
+
+Input Format:
+
+The First Line Of Input Contains T no of test cases
+The Second Line Of Input Contains N as input taken.
+
+Output Format:
+Print the number of digits in the nth number .
+
+Constraints:
+
+1<=T<=100
+1<=N<=100
+
+Examples:
+
+Input : 6
+Output : 14
+
+1,4 6, 9.11,14
+
+Input : 21
+Output : 111
+
+
+A3. Write a program to find the  n-th number made of prime digits
+
+Input Format:
+First Line Of Input Contains T Number Of Test Cases
+Second Line Of Input Contains an input Number N.
+
+Output Format:
+Print the Nth number of sequence and it should be only prime.
+
+Constraints:
+1<=T<=100
+1<=N<=10000
+
+Examples :
+Input  :
+1
+10
+Output :
+ 33
+
+
+
+
+A4. rotate array every kth element
+
+1 2 3 4 5 6 7 8 9
+
+k= 3
+
+3 2 1 6 5 4 9 8 7
+
+
+
+A5.
+Write a c program to print alphabet triangle.
+Input: 5
+Output:
+
+     A
+    ABA
+   ABCBA
+  ABCDCBA
+ ABCDEDCBA
+
+
+
+     1
+    121
+   12321
+  1234321
+ 123454321
+
+
+
