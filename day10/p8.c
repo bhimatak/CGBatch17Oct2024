@@ -24,8 +24,9 @@ int main()
 	printf("\nRet=%d\tRet1=%d\n\n",ret,ret1);
 	*/
 
-	ret1 = Calc(add,110,20);
 	ret = Calc(sub,30,5);
+	ret1 = Calc(add,110,20);
+	
 	printf("\nRet=%d\tRet1=%d\n\n",ret,ret1);
 
 	return 0;
