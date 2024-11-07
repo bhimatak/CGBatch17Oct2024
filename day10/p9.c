@@ -4,7 +4,7 @@ int func();
 
 int main()
 {
-	int ret=0;
+	register int ret=0;
 	ret = func();
 	printf("\nRet = %d",ret);
 
@@ -12,6 +12,11 @@ int main()
 	printf("\nRet = %d",ret);
 
 	printf("\n\n");
+
+	int i;
+
+	for(i=0;i<100000;i++)
+		printf("%d",i);
 
 	return 0;
 }
