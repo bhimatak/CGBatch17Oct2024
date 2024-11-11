@@ -2,9 +2,9 @@
 
 int main()
 {
-	char Lines[] = "101|Amit|M|8888|10000";
+	char Lines[] = "101|Amit Kumar|M|8888|10000";
 	char Names[10][20];
-	int row=0,col=0;
+	int row=0,col=0,i;
 	char *ptr=NULL;
 	int flag = 0;
 
@@ -55,8 +55,8 @@ int main()
 
 		// printf("\n\n");
 		// putchar(*ptr);
-		printf("\n\n");
-		puts(Names[row]);
+	//	printf("\n\n");
+		//puts(Names[row]);
 	}
 	/*
 	ptr++;
@@ -77,6 +77,9 @@ int main()
 	printf("\n\n");
 	puts(Names[row]);
 	*/
+
+	for(i=0;i<row-1;i++)
+		printf("\n%s",Names[i]);
 
 	printf("\n\n");
 	return 0;
