@@ -53,6 +53,7 @@ int main()
 
 	
 	printf("\n\n");
+	e = temp;
 	free(e);
 
 	return 0;
