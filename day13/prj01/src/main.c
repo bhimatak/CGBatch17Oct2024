@@ -9,7 +9,7 @@ int main()
 	char line[BUFF];
 	int i;
 
-	
+	system("clear");
 
 	fp = fopen("./data/db.txt","r");
 
@@ -32,8 +32,16 @@ int main()
 
 	e = temp;
 
-	for(i=0;i<5;i++,e++)
+	for(i=0;i<5;i++,e++){
+		// system("clear");
 		printDetails(e);
+
+	}
+	/*
+	while(e!=NULL){
+		printDetails(e);
+		e++;
+	}*/
 
 	printf("\n\n");
 	return 0;
