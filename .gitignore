@@ -1,5 +1,5 @@
-*.a.out
-
+*.out
+a.out
 bin/
 obj/
 
