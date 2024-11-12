@@ -64,7 +64,7 @@ int main()
 	e1.sal = atoi(Names[4]);
 
 	printf("\nEmployee Records are\n");
-	if(display(testEmp)==1)
+	if(display(&e1)==1)
 	{
 		printf("\nError in Display\n");
 		return 1;
