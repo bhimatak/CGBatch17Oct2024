@@ -3,6 +3,8 @@
 #include <unistd.h>
 #include <pthread.h>
 #include <stdlib.h>
+#include <time.h>
+
 
 
 typedef unsigned long long ULL;
@@ -21,8 +23,12 @@ void *findNumT(void *);
 
 int main()
 {
-	pthread_t tid1,tid2,tid3,tid4;
-	struct varg a1,a2,a3,a4;
+	pthread_t tid1,tid2,tid3,tid4,tid5;
+	struct varg a1,a2,a3,a4,a5;
+
+	struct timespec start, end;
+    double time_taken;
+
 	
 	a1.s=0;
 	a1.e=1900000;
@@ -37,8 +43,12 @@ int main()
 	a3.k=1899999999;
 
 	a4.s=190000000;
-	a4.e=1900000000;
+	a4.e=199000000;
 	a4.k=1899999999;
+
+	a5.s=199000000;
+	a5.e=1900000000;
+	a5.k=1899999999;
 
 
 
@@ -60,15 +70,27 @@ int main()
 	e=1900000000;
 	findNum(s,e,k);
 	*/
+	clock_gettime(CLOCK_MONOTONIC, &start);
 	pthread_create(&tid1,NULL,findNumT,&a1);
 	pthread_create(&tid2,NULL,findNumT,&a2);
 	pthread_create(&tid3,NULL,findNumT,&a3);
 	pthread_create(&tid4,NULL,findNumT,&a4);
+	pthread_create(&tid5,NULL,findNumT,&a5);
+	
 
 	pthread_join(tid1, NULL);
 	pthread_join(tid2, NULL);
 	pthread_join(tid3, NULL);
 	pthread_join(tid4, NULL);
+	pthread_join(tid5, NULL);
+
+	 // Stop clock
+	clock_gettime(CLOCK_MONOTONIC, &end);
+
+    // Calculate time taken in seconds
+    time_taken = (end.tv_sec - start.tv_sec) + (end.tv_nsec - start.tv_nsec) / 1e9;
+
+    printf("Time taken by function: %f seconds\n", time_taken);
 
 	printf("\nProgram Ended\n");
 

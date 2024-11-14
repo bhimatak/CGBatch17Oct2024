@@ -3,6 +3,8 @@
 #include <unistd.h>
 #include <pthread.h>
 #include <string.h>
+#include <time.h>
+
 
 typedef unsigned long long ULL;
 struct varg
@@ -76,6 +78,10 @@ int main()
 	EMP e;
 	pthread_t tid;
 
+	struct timespec start, end;
+    double time_taken;
+
+
 	// arg.a = 101;
 	// arg.b = 201;
 
@@ -86,13 +92,26 @@ int main()
 	strcpy(e.name,"Bhima");
 	e.sal = 10001.1;
 
-	// pthread_create(&tid, NULL, func,&arg);
-	// pthread_create(&tid, NULL, findEven,&arg);
+	clock_gettime(CLOCK_MONOTONIC, &start);
 
-	pthread_create(&tid,NULL,printEmp,&e);
-	
+	// pthread_create(&tid, NULL, func,&arg);
+	pthread_create(&tid, NULL, findEven,&arg);
+
+	// pthread_create(&tid,NULL,printEmp,&e);
+
+	 // Stop clock
+	pthread_join(tid,NULL);
+    clock_gettime(CLOCK_MONOTONIC, &end);
+
+    // Calculate time taken in seconds
+    time_taken = (end.tv_sec - start.tv_sec) + (end.tv_nsec - start.tv_nsec) / 1e9;
+
+    printf("Time taken by function: %f seconds\n", time_taken);
+
 	printf("\nSum Even = %lld\n",sumEven);
+
 	pthread_exit(NULL);
+
 
 	return 0;
 }
