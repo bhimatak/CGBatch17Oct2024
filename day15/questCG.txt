@@ -1,0 +1,136 @@
+Q1.
+Problem Statement:
+Given an unsorted array a of size N of non-negative integers, 
+find a continuous sub-array which adds to a given number sum.
+
+Input Format:
+The first line contains an integer, denoting the size of the array. 
+The second line contains integers denoting the elements 
+of the array.
+The last line contains an integer, denoting the sum. 
+
+Constraints
+1<= n<=100
+1<=arr<= 1000, where arr is the ith element of the array.
+1<= n<=100000
+
+Output Format:
+The output line contains integers denoting the indexes.
+
+TESTCASE 1:
+Input:
+7
+[1, 4, 0, 0, 3, 10, 5]
+
+sum = 7
+Output: 
+Sum found between indexes 1 and 4
+
+TESTCASE 2:
+Input:
+2
+[1, 4]
+sum = 0
+Output: 
+No subarray found
+
+
+=========================================================================================
+
+Q.2
+Given an array A of N positive numbers. The task is to find the position 
+where equilibrium first occurs in the array. Equilibrium position in an array is a position such that the sum of elements before it is equal to the sum of   elements after it.
+
+Input Format:
+The first line contains an integer, denoting the size of the array. 
+The second line contains integers denoting the elements 
+of the array.
+Constraints
+1<= n<=100
+1<=arr<= 1000, where arr is the ith element of the array.
+
+Output Format:
+The output line contains integer denoting an equilibrium
+index (if any) or -1 (if no equilibrium indexes exist).
+
+TESTCASE 1:
+Input:
+7
+[-7, 1, 5, 2, -4, 3, 0]
+
+o/p
+3
+
+I/p
+5
+[0 0 0 0 -1]
+
+o/p
+4
+
+
+=========================================================================================
+
+Q.3
+
+C Program to Find the Frequency of Every Word in a given String
+
+i/p
+"Hi I am a C Programmer, I Love C Coding, I am Passionate towards C Coding"
+o/p
+I = 3
+am = 2
+C = 3
+Coding = 2
+
+=========================================================================================
+
+Q4. 
+C Program to Remove all Characters in Second String which are present in First String
+i/p
+Bhima shankar is a C programme
+o/p
+Bhima snkr is a C programme
+
+=========================================================================================
+
+Q5
+alternativel merge two strings
+
+i/p
+Bhima
+ABCDEOLM
+o/p
+BAhBiCmDaEOLM
+
+=========================================================================================
+
+Q6. Given an array of positive integers. 
+Your task is to find the leaders in the array. An element is leader if it is greater than all the elements to its right side.
+And the rightmost element is always a leader.
+
+Input Format:
+The first line contains an integer, denoting the size of the array. 
+The second line contains integers denoting the elements of the array.
+ 
+Constraints
+ 1<= n<=100-1000<=arr[i]<= 1000, where arr is the ith  element of the array.
+ Output Format:
+ The output line prints all the leaders in the array.
+ 
+TESTCASE 1:
+ Input:
+ 6
+ 6 7 4 3 5 2
+ Output: 
+ 2 5 7
+ 
+TESTCASE 2:
+ Input:
+ 5
+ 2 6 3 8 4 
+ Output:
+ 4 8
+
+
+
