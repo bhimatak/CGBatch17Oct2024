@@ -10,6 +10,7 @@ typedef struct node
 void printList(NODE *);
 NODE* appendNode(NODE *,NODE *);
 NODE *addNodeBeg(NODE *, NODE *);
+int delNode(NODE *, int);
 
 
 int main()
@@ -42,15 +43,32 @@ int main()
 	appendNode(head,&h2);
 	appendNode(head,&h3);
 	*/
-
-	head = addNodeBeg(head,&h1);
+	head = addNodeBeg(head,&h4);
 	//traversing the list
 	printList(head);
+
+	head = addNodeBeg(head,&h3);
+	//traversing the list
+	printList(head);
+
 
 	head = addNodeBeg(head,&h2);
 	//traversing the list
 	printList(head);
 
+	head = addNodeBeg(head,&h1);
+	//traversing the list
+	printList(head);
+	
+	//head = &h4;
+
+	if(delNode(head,30) == 0)
+		printf("\nNode Deleted\n");
+	else
+		printf("\nKey Not found in the list\n");
+	//traversing the list
+	printList(head);
+	
 
 	printf("\n\n");
 
@@ -122,4 +140,37 @@ NODE *addNodeBeg(NODE *head, NODE *nn)
 		head = nn;     // making the head point to the nn(BA of new list)
 	}
 	return head; //return the BA of the list
+}
+
+
+int delNode(NODE *head, int key)
+{
+	int flag = 1;
+
+	NODE *temp = head;
+
+
+	while(head!=NULL)
+	{
+		if(head->val == key)
+		{
+			//found
+			flag = 0;
+			break;
+		}
+		temp = head;
+		head = head->ptr;
+	}	
+
+	if(flag == 0)
+	{
+		printf("\nGunashree->%d",temp->val);
+		printf("\nPooja->%d",head->val);
+		
+		temp->ptr = head->ptr;
+	}
+
+	return flag;
+
+
 }
