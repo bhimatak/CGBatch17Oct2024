@@ -16,39 +16,31 @@ int main()
 	NODE h1,h2,h3,h4;
 
 	//ptr1 is used to navigate/travese betwn nodes
-	NODE *ptr1=NULL;
+	NODE *head=NULL;
 
-	//initialze values to each node
+	h4.val = 40;
+	h4.ptr = NULL;
 
+	head = appendNode(head,&h4);
+
+	//traversing the list
+	printList(head);
+
+	
 	h1.val = 10;
 	h1.ptr = NULL;
 
 	h2.val = 20;
 	h2.ptr = NULL;
-
 	h3.val = 30;
 	h3.ptr = NULL;
 
-	//Making relationship (travese)/creating LList
+	head = appendNode(head,&h1);
 
-	h1.ptr = &h2;
-	h2.ptr = &h3;
-
-	
+	appendNode(head,&h2);
+	appendNode(head,&h3);
 	//traversing the list
-	ptr1 = &h1; // ptr1 is pointing to BA of list
-	printList(ptr1); //Send the BA of list to function
-
-	h4.val = 40;
-	h4.ptr = NULL;
-
-	//h3.ptr = &h4;
-	ptr1 = &h1;
-	appendNode(ptr1,&h4);
-
-	//traversing the list
-	ptr1 = &h1; // ptr1 is pointing to BA of list
-	printList(ptr1); //Send the BA of list to function
+	printList(head);
 
 
 	printf("\n\n");
@@ -76,11 +68,13 @@ NODE *appendNode(NODE *head,NODE *nn)
 	if(head == NULL)
 	{
 		//the list is empty
+		printf("\nList is Empty\n");
 		head = nn;
 		temp = nn;
 	}
 	else
 	{
+		printf("\nList is not empty\n");
 		while(head->ptr!= NULL)
 		{
 			printf("%d->",head->val);
