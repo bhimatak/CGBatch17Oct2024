@@ -7,8 +7,10 @@ typedef struct node
 	struct node *next; //Self referencial pointer (SELF/SRP)
 }NODE;
 
+
+NODE *createNode(NODE *);
+int dispMainMenu();
 void printList(NODE *);
-void printListAdd(NODE *);
 NODE* appendNode(NODE *,NODE *);
 NODE *addNodeBeg(NODE *, NODE *);
 int delNode(NODE *, int);
@@ -18,34 +20,72 @@ int main()
 {
 	NODE *nn=NULL;
 	NODE *head=NULL,*temp=NULL;
-	int ch;
-	do
+	int flag=0;
+	int key=0;
+
+	while(1)
 	{
-		nn = (NODE *)malloc(sizeof(NODE));
-		// printf("\nNew Node Add=%p",nn);
-		printf("\nEnter the value of New Node: ");
-		scanf("%d",&nn->val);
-		nn->next = NULL;
-
-		head = appendNode(head,nn);
-		if (head == NULL)
+		switch(dispMainMenu())
 		{
-			printf("\nUnable to create Node\n");
-			printf("\nMem allocation failed\n");
-			return 1;
+			case 1:
+					nn = createNode(nn);
+					head = addNodeBeg(head,nn);
+					break;
+			case 2:
+					nn = createNode(nn);
+					head = appendNode(head,nn);
+					break;
+			case 3:
+					printf("\nEnter the key of the node: ");
+					scanf("%d",&key);
+					delNode(head,key);
+					break;
+			case 4:
+					printList(head);
+					break;
+			case 5:
+					flag = 1;
+					break;
+			default:
+					printf("\nEnter the correct Choice");
+					break;
 		}
-
-		printf("\nDo you want to add new node(1/0): ");
-		scanf("%d",&ch);
-	}while(ch !=0);
+		if(flag == 1)
+			break;
+	}
 	
-	printList(head);
-
 	printf("\n\n");
 
 	return 0;
 
 }
+
+NODE *createNode(NODE *nn)
+{
+	nn = (NODE *)malloc(sizeof(NODE));
+	printf("\nEnter the value of New Node: ");
+	scanf("%d",&nn->val);
+	nn->next = NULL;
+	return nn;
+}
+
+
+int dispMainMenu()
+{
+	int ch;
+	printf("\nLinked List Menu\n");
+	printf("\nPress,");
+	printf("\n1. Add Node in Begning");
+	printf("\n2. Add Node to the End");
+	printf("\n3. Delete a Node");
+	printf("\n4. Print List");
+	printf("\n5. Exit");
+	printf("\nChoice: ");
+	scanf("%d",&ch);
+
+	return ch;
+}
+
 
 void printList(NODE *head)
 {
@@ -56,34 +96,15 @@ void printList(NODE *head)
 		printf("\nList is Empty\n");
 		return;
 	}
-	// printf("\nlist using loops and function\n");
+	printf("\nList is\n===================================\n");
 	while(head!= NULL)
 	{
 		printf("%d->",head->val);
 		head = head->next;	
 	}
 	printf("NULL");
+	printf("\n\n===================================\n");
 }
-
-
-void printListAdd(NODE *head)
-{
-
-	if(head == NULL)
-	{
-		//the list is empty
-		printf("\nList is Empty\n");
-		return;
-	}
-	printf("\nlist using loops and function\n");
-	while(head!= NULL)
-	{
-		printf("\n%d->%p",head->val,head->next);
-		head = head->next;	
-	}
-	printf("NULL");
-}
-
 
 
 
