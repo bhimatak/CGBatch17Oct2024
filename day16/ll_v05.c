@@ -9,6 +9,8 @@ typedef struct node
 
 void printList(NODE *);
 NODE* appendNode(NODE *,NODE *);
+NODE *addNodeBeg(NODE *, NODE *);
+
 
 int main()
 {
@@ -21,7 +23,7 @@ int main()
 	h4.val = 40;
 	h4.ptr = NULL;
 
-	head = appendNode(head,&h4);
+	//head = appendNode(head,&h4);
 
 	//traversing the list
 	printList(head);
@@ -35,10 +37,17 @@ int main()
 	h3.val = 30;
 	h3.ptr = NULL;
 
-	head = appendNode(head,&h1);
+	/*head = appendNode(head,&h1);
 
 	appendNode(head,&h2);
 	appendNode(head,&h3);
+	*/
+
+	head = addNodeBeg(head,&h1);
+	//traversing the list
+	printList(head);
+
+	head = addNodeBeg(head,&h2);
 	//traversing the list
 	printList(head);
 
@@ -51,6 +60,13 @@ int main()
 
 void printList(NODE *head)
 {
+
+	if(head == NULL)
+	{
+		//the list is empty
+		printf("\nList is Empty\n");
+		return;
+	}
 	printf("\nlist using loops and function\n");
 	while(head!= NULL)
 	{
@@ -86,4 +102,24 @@ NODE *appendNode(NODE *head,NODE *nn)
 	head = temp; //head is again pointed to the BA
 
 	return head;
+}
+
+
+NODE *addNodeBeg(NODE *head, NODE *nn)
+{
+	NODE *temp = head;
+	printf("\nIn addNodeBeg\n");
+	if(head == NULL)
+	{
+		//the list is empty
+		printf("\nList is Empty\n");
+		head = nn;
+		temp = nn;
+	}
+	else
+	{
+		nn->ptr = head;
+		head = nn;     // making the head point to the nn(BA of new list)
+	}
+	return head; //return the BA of the list
 }
