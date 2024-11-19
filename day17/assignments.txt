@@ -10,3 +10,16 @@ aebfcgdh
 
 o/p
 abcdefgh
+
+
+Q2. Given a string, find if it is a palindromic anagram is possible or not
+
+i/p
+carrace
+o/p
+True
+
+i/p
+abcdeffgh
+o/p
+false
