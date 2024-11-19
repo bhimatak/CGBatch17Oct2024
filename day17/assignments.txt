@@ -1,0 +1,12 @@
+Q1. 
+1. Create an empty string, D.
+2. Let N be the size of the received string M.
+3. Place the first ceil(N/2) characters from M at the odd positions in string D.
+4. Take the remaining characters from M and put them at the even positions in D.
+5. D is the output string.
+
+I/p
+aebfcgdh
+
+o/p
+abcdefgh
