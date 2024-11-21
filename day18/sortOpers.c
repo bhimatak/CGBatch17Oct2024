@@ -96,7 +96,6 @@ int insSort(int *arr, int CAP)
 	for(i=1;i<CAP-1;i++)
 	{
 		j = i-1;
-		flag = 0;
 		key = arr[i];
 		while((j>=0)&&(key<arr[j]))
 		{
