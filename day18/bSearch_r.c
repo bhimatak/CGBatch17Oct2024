@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define FAILURE -1
+
 int bSearch_r(int *, int,int,int);
 
 int main(int argc, char *argv[])
@@ -24,7 +26,7 @@ int main(int argc, char *argv[])
 
 	i = bSearch_r(a,0,count,key);
 	
-	if(i!=EXIT_FAILURE)
+	if(i!=FAILURE)
 		printf("\nKey Found @ %d poisition of the list",i);
 	else
 		printf("\nKey Not Found");
@@ -39,7 +41,7 @@ int bSearch_r(int *arr, int low, int high, int key)
 
 
 	if (low>high)
-		return EXIT_FAILURE;
+		return FAILURE;
 	
 	if(key == arr[mid])
 	{
