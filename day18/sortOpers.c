@@ -6,6 +6,7 @@
 
 int bubSort(int *, int);
 int selSort(int *, int);
+int insSort(int *, int);
 
 int swapEle(int *, int *);
 
@@ -33,7 +34,9 @@ int main(int argc, char *argv[])
 	printf("\nBefore Sorting\n");
 	display(a,count);
 	//bubSort(a,count);
-	selSort(a,count);
+	//selSort(a,count);
+	insSort(a,count);
+	printf("\nInsertion Sort\n");
 	printf("\nAfter Sorting\n");
 	display(a,count);
 
@@ -80,6 +83,27 @@ int selSort(int *arr, int CAP)
 		}
 		if(flag == 1)
 			swapEle(&arr[i],&arr[min_i]);
+	}
+	return True;
+}
+
+
+int insSort(int *arr, int CAP)
+{
+	int i,j;
+	int key;
+	
+	for(i=1;i<CAP-1;i++)
+	{
+		j = i-1;
+		flag = 0;
+		key = arr[i];
+		while((j>=0)&&(key<arr[j]))
+		{
+			arr[j+1] = arr[j];
+			j--;
+		}
+		arr[j+1] = key;
 	}
 	return True;
 }
