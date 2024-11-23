@@ -1,0 +1,101 @@
+Q1.
+
+The first line contains an integer N, denoting the total number of books.
+Next, N lines contain a string that denotes "title", "author", and "genre" separated by a comma.
+Note: In code stub, you get 2D array books: where the 0th column denotes the title,
+      the 1st column denotes the author, and the 2nd column denotes the genre
+
+Input:
+
+4
+The Great Gatsby,F. Scott Fitzgerald,fiction
+The Diary of a Young Girl,Anne Frank,non-fiction
+Harry Potter and the Philosophers Stone,J.K. Rowling,children
+The Catcher in the Rye,J.D. Salinger,fiction
+
+Output:
+Harry Potter and the Philosophers Stone
+The Great Gatsby
+The Catcher in the Rye
+The Diary of a Young Girl
+
+Explanation
+
+The sorted genre is: [children, fiction, fiction, non-fiction].
+
+
+Q2.
+Q. Find the GCD of the given list in such a way that by removing exactly one element and then taking the GCD will be the max
+
+I/p
+n= 3
+7, 6 ,8
+
+o/p
+2
+
+explanation: by removing 7 from the list GCD is 2 
+
+Q3. You are given a string s as input and n queries. Each query consists of 4 space-separated values.
+
+The first value denotes the function which will be called.
+The second value denotes the start index (1 based) if required, otherwise, it would be 0.
+The third value denotes the end index (1 based) if required, otherwise, it would be 0.
+The fourth value will contain an integer denoting the ASCII value of a lower case alphabet character if required otherwise it would be 0.
+You have to implement the following functions.
+
+  
+
+  function reverseString() {
+    // this function will reverse the whole string
+  }
+
+  function reverseString(a, b) {
+    // this function will reverse the part of string starting       from a index character to b index character.
+  }
+  
+  function changeCharacter(a, b, c) {
+  // this function will change all the character ﻿from a       postion to b position to c
+  }
+
+  function changeCharacter(a, b) {
+  // this function will swap the the values of postion a and b respectively.
+  ﻿}
+
+
+Query mapping and function mapping are as follows.
+
+If 1st value in query is 2, then you should call function reverseString().
+
+If 1st value in query is 2, then you should call function reverseString(a, b).
+
+If 1st value in query is 3, then you should call function changeCharacter(a, b).
+
+If 1st value in query is 4, then you should call function reverseString(a, b, c).
+Input Format
+
+First-line will contain a string s.
+Second-line will contain an integer n, denoting the number of queries.
+Third-line will contain an integer 4. (always fixed)
+The next n line will contain 4 space-separated integers each.
+Constraints
+
+1 ≤ |s| ≤ 105
+0 ≤ n ≤ 103
+Output Format
+
+Return the string after processing all the above queries.
+Evaluation Parameters
+
+Sample Input
+abcde
+2
+4
+1 0 0 0
+4 1 2 98
+Sample Output
+bbcba﻿
+Explanation
+﻿After 1st query, our string will be edcba.
+
+After 2nd query, our string will be bbcba. (ASCII value of b is 98).
