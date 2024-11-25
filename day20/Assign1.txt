@@ -1,0 +1,56 @@
+Write a C Program based application to read and process  comma separated defect details as command line arguments.
+Below are the detailed requirements.
+
+1. Validate command line arguments
+2a. Check if  defect id and state are present. Else for missing fields or defects not prefixed with 'D' display error as below.
+	Parse error in <input line>
+2b. Ignore records with parse error 
+3. Extract and Store all fields of valid records in STL container. Display the fields in a formatted way as in given example
+4. For defects which are already existing, validate the new state. New state should be as per given state transition below.
+    New->Assigned->InProgress->Fixed->Verified->Closed
+   For valid state transition update the state, also maintain a state transition field as below. Allocate memory dynamically for this field.
+   <old State>----><newState>
+   For invalid state trainition display as Invalid State  with Expected state in a formatted way as in given example
+5. Display the defects with update state
+
+For eg.
+./prg  D1:New A1:New D10:Fixed D4:Closed D5:Open D1:Fixed D10:Verified
+
+Displayed Output:
+-------------------
+Defect:D1, State:New
+Parse error in A1:New
+Defect:D10, State:Fixed
+Defect:D4,  State:Closed
+Defect:D5, State:Open
+Defect:D1, State:Fixed
+Defect:D10, State:Verified
+
+Defect:D5, Invalid State:Open
+Defect:D1, Invalid State:Fixed, Expected:Assigned
+Defect:D10, user:user2, Verified
+
+Updated Defects States:
+Defect:D1,  State:New
+Defect:D10,  State:Verified, Transition:Fixed->Verified
+Defect:D4,  State:Closed
+
+-------------------------------------------------------------------
+Following are expectations, apart from the functional requirements.
+
+* Production Level Code
+* Class based Design using STL containers 
+* Appropriate error and exception handling
+* Modularity and multi - file program (Proper Directory structure should be maintained)
+* Functions should return SUCCESS / FAILURE, wherever applicable 
+* Appropriate Make file should be available
+* No memory leaks  or memory errors 
+
+Total Marks - 50
+  
+  C Programming - 25 (I/O handling+ processing) + 7 (ACG)
+  Data Structures - 10
+  Programming Tools - 5 (makefile) + 3 (valgrind)
+
+Note:place valgrind and output file if any in bin folder
+-----------------------------------------------------

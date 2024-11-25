@@ -1,0 +1,60 @@
+Design and Implement a solution  to cater the  below requirements. Let command line arguments be   an input file name.
+1. File consists of 2 or more lines each will contain below parameters in order separated by comma
+    <Protocol name of variable string length>, <Port type as udp or tcp (case insensitive)>,<Port number in range 0-65535>
+2. Parse and  Detect input errors (i.e records with missing and invalid port type and invalid port number)  if any  and display input entry with appropriate error message .
+     Ignore those error entries.
+4.  Store all valid records in suitable container/records
+5.  Sort all protocol names in ascending order and display the total valid entries and object details. Display each port number category as Well known  OR Registered Ports or Dynamic Ports using given port range below.
+
+	Port Range:
+	--------------
+	0 - 1023 - Well known ports
+	1024 - 49151 - Registered Ports
+	49152 - 65535 - Dynamic Ports
+
+6.  Traverse the container and display all stored entries
+
+7. Use appropriate algorithm to extract all objects  with udp port type and to display their protocol names
+
+For Example:-
+$./serverprg  input_file1
+
+input_file1:
+---------------
+DNS, tcp, 53
+Echo,udp,65536
+DHCP,udp,29900
+UDP,bye,123213
+TFTP, UDP,69
+SNMP, udp, 161
+ftp,tcp, 49153
+ 
+Displayed output
+----------------
+Input error in line "Echo,udp,65536" Invalid port number "65536"
+Input error in line "UDP,bye,123213" Invalid port type "bye"
+
+Total valid entries:5
+Protocol:DNS	Port:tcp		Port:53 Well known ports
+Protocol:DHCP	Port:tcp		Port:29900 Registered Ports
+Protocol:ftp	Port:tcp		Port:49153 Dynamic Ports
+Protocol:SNMP	Port:udp		Port:161 Well known ports
+Protocol:TFTP	Port:UDP 	Port:69 Well known ports
+
+UDP protocol entries:
+SNMP
+TFTP
+
+-------------------------------------------------------------------
+Following are expectations, apart from the functional requirements.
+
+* Production Level Code
+* Appropriate error and exception handling
+* Modularity and multi - file program (Proper Directory structure should be maintained)
+* Functions should return SUCCESS / FAILURE, wherever applicable 
+* Appropriate Make file should be available
+* No memory leaks  or memory errors 
+
+
+Note:place valgrind and output file if any in bin folder
+-----------------------------------------------------
