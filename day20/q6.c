@@ -45,9 +45,41 @@ int main()
 	printf("\nBook3=%p",book3);
 
 
-	char *ptr = book1;
-	printf("\nContents of ptr=%p\nits own Add=%p",ptr,&ptr);
-	printf("\n%s\t%s",book1[0],*ptr);
+	char *ptr1 = book1[0];
+	char *ptr2 = book1[1];
+
+	char *ptr3 = book1[2];
+
+	printf("\nContents of ptr=%p\nits own Add=%p",ptr1,&ptr1);
+	printf("\n%s\t%s",book1[0],ptr1);
+	printf("\n%s\t%s\n",ptr2,ptr3);
+
+
+	char *book= ptr1;
+	printf("\nbook %s",book);
+	book = ptr2;
+	printf("\nbook %s",book);
+	book = ptr3;
+	printf("\nbook %s",book);
+
+	char *booksPtr[3];
+	char **booksPtrDy = (char **)malloc(sizeof(char*)*3);
+	booksPtr[0] = book1[0];
+	booksPtr[1] = book1[1];
+	booksPtr[2] = book1[2];
+	
+	booksPtrDy[0] = book1[0];
+	booksPtrDy[1] = book1[1];
+	booksPtrDy[2] = book1[2];
+	
+
+	for(int i=0;i<3;i++)
+	printf("\nbooksPtr[%d] = %s\n",i,booksPtr[i]);
+	
+
+	for(int i=0;i<3;i++)
+		printf("\nbooksPtrDy[%d] = %s\n",i,booksPtrDy[i]);
+
 
 	// char ***ptr1 = &books[0];
 	// printf("\nAddress of ptr=%p\nits own Add=%p",ptr1,&ptr1);
