@@ -7,38 +7,23 @@
 
 int main(int argc, char *argv[])
 {
-	char *temp[5];
-	for(int i=0;i<5;i++)
+	int i,count=0;
+	
+	char *temp[argc];
+	for(i=0;i<argc;i++)
 		temp[i] = (char *)malloc(1024);
-	// temp[0] = "ls";
-	// temp[1] = "-l";
-	// temp[2] = (char *)0;
-	// execv("/usr/bin/ls", temp);
 
 	
-	if(strcmp(argv[1],"calc")==0)
-	{
-		strcpy(temp[0], argv[1]);
-		strcpy(temp[1], argv[2]);
-		strcpy(temp[2], argv[3]);
-		strcpy(temp[3], argv[4]);
-		temp[4] = (char *)0;
-	
-			
-	}
-	else if(strcmp(argv[1],"area")==0)
-	{
-		//area
-		strcpy(temp[0], argv[1]);
-		strcpy(temp[1], argv[2]);
-		strcpy(temp[2], argv[3]);
-		// strcpy(temp[3], argv[4]);
-		temp[4] = (char *)0;
-		
-	}
-	execv(argv[1], temp);
+	for(i=1,count=0;i<argc;i++,count++)
+		strcpy(temp[count],argv[i]);	
 
+	temp[count] = (char *)0;
 
+	for(i=0;i<count;i++)
+		printf("\n%s",temp[i]);
+	printf("\nCount=%d",count);
+	if(execv(argv[1], temp)<0)
+		perror("execv ");
 	
 	printf("\nThis will not print at all\n\n");
 
