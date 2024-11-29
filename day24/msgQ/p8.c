@@ -19,9 +19,14 @@ int main()
 	printf("\nMSG queue created with %d id\n",msgid);
 	printf("\nTO recv msg from msgid = %d\n",msgid);
 	
-	if(msgrcv(msgid,&msg1,BUFF,0,0)<0)
+	if(msgrcv(msgid,&msg1,BUFF,0,IPC_NOWAIT)<0)
 	{
 		perror("msgrcv ");
+		if(msgctl(msgid,IPC_RMID,0)<0)
+		{
+			perror("msgctl ");
+			_exit(EXIT_SUCCESS);	
+		}
 		return (EXIT_FAILURE);
 	}
 

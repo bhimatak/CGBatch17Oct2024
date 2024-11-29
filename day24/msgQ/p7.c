@@ -18,7 +18,7 @@ int main()
 	printf("\nMSG queue created with %d id\n",msgid);
 	printf("\nTO send msg to msgid = %d\n",msgid);
 	msg1.msgtype = 1;
-	strcpy(msg1.txtMsg,"Hi Bhima, Hope you are doing good\n"); 
+	strcpy(msg1.txtMsg,"Hi Bhima3, Hope you are doing good\n"); 
 	len = strlen(msg1.txtMsg);
 
 	if(msgsnd(msgid,&msg1,len,IPC_NOWAIT)==-1)

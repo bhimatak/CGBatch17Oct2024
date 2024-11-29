@@ -3,7 +3,7 @@
 int main()
 {
 	int msgid;
-	msgid = msgget((key_t)13,IPC_CREAT|PERMS);
+	msgid = msgget((key_t)15,IPC_CREAT|PERMS);
 	if(msgid < 0){
 		perror("msgget ");
 		_exit(EXIT_SUCCESS);
