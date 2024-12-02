@@ -16,7 +16,7 @@ int main()
 	int shmid;
 	// char msg[] = "Hello Bhima, WellCome to C Programmming class";// = NULL; //(char *)malloc(MAXBUF);
 	
-	shmid = shmget(key,46,PERMS|IPC_CREAT);
+	shmid = shmget(key,1,PERMS|IPC_CREAT);
 
 	char *ptr = NULL;
 
@@ -34,5 +34,6 @@ int main()
 	
 	shmdt(ptr);
 
+	shmctl(shmid,IPC_RMID,0);
 	return 0;
 }

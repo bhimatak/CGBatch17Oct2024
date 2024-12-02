@@ -32,7 +32,7 @@ int main()
 	// msg = (char *)shmat(shmid, (void *)0,0);
 	
 	ptr = (char *)shmat(shmid,(void *)0,0);
-	ptr = msg;
+	strcpy(ptr,msg);
 	
 	shmdt(ptr);
 
