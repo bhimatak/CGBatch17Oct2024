@@ -47,7 +47,7 @@ int main()
 
 	serv_address.sin_family = AF_INET;
 	serv_address.sin_port = htons(PORTNO);
-	serv_address.sin_addr.s_addr = inet_addr("127.0.0.1");
+	serv_address.sin_addr.s_addr = INADDR_ANY;//inet_addr("127.0.0.1");
 
 	retValue = bind(sfd, (struct sockaddr *)&serv_address,sizeof(serv_address));
 	if(retValue < 0)
@@ -68,19 +68,20 @@ int main()
 
 	while(1){
 		csfd = accept(sfd,(struct sockaddr *)&client_address,&clientAddlen);
+		if(fork()==0){
+			while(1){
+				read(csfd,msg,MAXBUFF);
 
-		while(1){
-			read(csfd,msg,MAXBUFF);
+				printf("\nClient sent Msg: %s\n\n",msg);
+				if(strcmp(msg,"bye\n")==0)
+				{
+					close(csfd);
+					break;
+				}
 
-			printf("\nClient sent Msg: %s\n\n",msg);
-			if(strcmp(msg,"bye\n")==0)
-			{
-				close(csfd);
-				break;
+				memset(msg,'\0',MAXBUFF);
 			}
-
-			memset(msg,'\0',MAXBUFF);
-		}
+		}//end of fork
 	}
 
 
