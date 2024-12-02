@@ -66,46 +66,18 @@ int main()
 	}
 	printf("\nListening to the clients now\n");
 
-	// while(1){
-		csfd = accept(sfd,(struct sockaddr *)&client_address,&clientAddlen);
+	
+	csfd = accept(sfd,(struct sockaddr *)&client_address,&clientAddlen);
 
+	while(1){
 		read(csfd,msg,MAXBUFF);
 
 		printf("\nClient sent Msg: %s\n\n",msg);
 
 		memset(msg,'\0',MAXBUFF);
-		
-		strcpy(msg,"====================================================\n");
-		strcat(msg,"\n=============Welcome to Capgemini Server=============\n");
-		strcat(msg,"====================================================\n");
+	}
 
-		write(csfd,msg,strlen(msg));
 
-		/*if(csfd < 0)
-		{
-			perror("accept() ");
-			exit(EXIT_FAILURE);
-		}
-		printf("\nServer: Client got a connection\n");
-
-		strcpy(msg,"====================================================\n");
-		strcat(msg,"\n=============Welcome to Capgemini Server=============\n");
-		strcat(msg,"====================================================\n");
-
-		write(csfd,msg,strlen(msg));
-		while(1)
-		{
-			memset(msg,'\0',MAXBUFF);
-			read(csfd,msg,MAXBUFF);
-			printf("Server: Client sent a msg: %s\n",msg);
-			if(strcmp(msg,"bye\n")==0)
-			{
-				close(csfd);
-				break;
-			}
-		}
-		*/
-	// }
 	close(csfd);
 	close(sfd);
 	

@@ -62,17 +62,7 @@ int main()
 	memset(msg,'\0',MAXBUFF);
 	read(sfd,msg,MAXBUFF);
 	puts(msg);
-	/*
-	printf("%s",msg);
-	while(1){
-		memset(msg,'\0',MAXBUFF);
-		fgets(msg,MAXBUFF,stdin);
-		write(sfd,msg, strlen(msg));
-		if(strcmp(msg,"bye\n")==0)
-		{
-			break;
-		}
-	}*/
+	
 	close(sfd);
 
 	return 0;
