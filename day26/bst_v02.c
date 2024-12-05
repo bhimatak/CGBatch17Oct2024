@@ -146,12 +146,12 @@ int main()
     insertNode(root,1);
     insertNode(root,2);
     insertNode(root,13);
-    insertNode(root,5);
+    // insertNode(root,5);
 /*
                          5
                    3          10
                1      4    8      13
-                 2        5
+                 2        
                    
 
 inorder(LNR)
